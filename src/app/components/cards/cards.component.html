@@ -1,0 +1,35 @@
+<div
+  class="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+>
+  <div
+    *ngFor="let post of posts"
+    class="bg-gradient-to-r from-blue-500 via-teal-500 to-indigo-600 p-4 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-xl hover:rotate-2 hover:bg-gradient-to-l from-green-400 via-blue-500 to-purple-500 duration-300 ease-in-out"
+  >
+    <h2
+      class="text-2xl font-extrabold text-black-400 truncate hover:text-blue-300 hover:text-3xl transition-all duration-300 ease-in"
+    >
+      {{ post.title }}
+    </h2>
+
+    <p
+      class="mt-2 text-gray-100 break-words hover:text-blue-300 transition-colors duration-300 ease-in-out"
+    >
+      <span class="text-gradient" [innerHTML]="post?.selfTextHTML"></span>
+    </p>
+
+    <a
+      class="block mt-4 text-yellow-400 hover:text-teal-400 font-semibold text-lg transition-colors duration-300 ease-in-out transform hover:scale-105"
+      [href]="post.url"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Read More
+    </a>
+
+    <p
+      class="mt-2 text-gray-300 hover:text-teal-500 transition-colors duration-300 ease-in-out"
+    >
+      Score: <span class="font-semibold">{{ post.score }}</span>
+    </p>
+  </div>
+</div>
